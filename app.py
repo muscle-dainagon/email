@@ -79,10 +79,9 @@ def main():
 
     ## 一斉送信
     filename = "email_list.csv"
-
     with open(filename, "r", encoding="utf-8") as file:
         reader = csv.reader(file)
-        header = next(reader)
+        header = next(reader) # ヘッダーを取得 ←絶対いる！
         for row in reader:
             address = row[0]
             to_email = row[1]
